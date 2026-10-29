@@ -6,6 +6,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect } from "react";
 import NavbarComponent from "../components/NavbarComponent";
+import FooterComponent from "../components/FooterComponent";
 
 export const Route = createRootRoute({
   component: Layout,
@@ -23,11 +24,12 @@ function Layout() {
   }, [title]);
 
   return (
-    <>
-    <NavbarComponent />  
-    <main className="px-8 py-6">
-      <Outlet />
-    </main>
-    </>
+    <div className="min-h-screen bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-zinc-100 transition-colors">
+      <NavbarComponent />
+      <main>
+        <Outlet />
+      </main>
+      <FooterComponent />
+    </div>
   );
 }
