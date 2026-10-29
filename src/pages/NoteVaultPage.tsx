@@ -1,13 +1,29 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Plus, Search, FileText, Calendar, NotebookPen } from "lucide-react";
 import useNoteStore from "../store/noteStore";
 
 export default function NoteVaultPage() {
-  const { notes, tags } = useNoteStore();
+  const { notes } = useNoteStore();
+  const [searchQuery, setSearchQuery] = useState("");
 
-  // sort notes in descending order
-  const myNotes = Object.values(notes).sort((a, b) =>
-    Temporal.ZonedDateTime.compare(b.lastModifiedAt, a.lastModifiedAt),
+  // sort notes in descending order safely resolving possible null/undefined/string types
+  const myNotes = Object.values(notes).sort((a, b) => {
+    const dateA = a.lastModifiedAt 
+      ? (typeof a.lastModifiedAt === "string" ? Temporal.ZonedDateTime.from(a.lastModifiedAt) : a.lastModifiedAt)
+      : Temporal.Now.zonedDateTimeISO();
+
+    const dateB = b.lastModifiedAt 
+      ? (typeof b.lastModifiedAt === "string" ? Temporal.ZonedDateTime.from(b.lastModifiedAt) : b.lastModifiedAt)
+      : Temporal.Now.zonedDateTimeISO();
+
+    return Temporal.ZonedDateTime.compare(dateB, dateA);
+  });
+
+  // Filter notes based on search query
+  const filteredNotes = myNotes.filter((note) =>
+    note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    note.content.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
