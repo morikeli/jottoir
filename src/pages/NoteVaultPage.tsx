@@ -15,7 +15,7 @@ export default function NoteVaultPage() {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight">
+          <h1 className="text-3xl font-bold font-brand text-gray-900 dark:text-white tracking-tight">
             My Vault
           </h1>
           <p className="text-gray-500 dark:text-zinc-400 mt-1">
