@@ -47,23 +47,16 @@ export default function NoteVaultPage() {
       {/* Empty notes Placeholder */}
       {filteredNotes.length === 0 && myNotes.length === 0 && (
         <div className="flex flex-col items-center justify-center p-12 text-center bg-white dark:bg-zinc-900/50 border border-dashed border-gray-200 dark:border-zinc-800 rounded-2xl my-6">
-          {/* Visual Icon Anchor */}
           <div className="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950/40 flex items-center justify-center text-amber-500 dark:text-amber-400 mb-4">
             <NotebookPen className="w-6 h-6" />
           </div>
-
-          {/* Primary Heading */}
           <h3 className="text-lg font-semibold text-gray-900 dark:text-zinc-100 mb-1">
             Your vault is empty
           </h3>
-
-          {/* Readable Secondary Copy */}
           <p className="text-sm text-gray-500 dark:text-zinc-400 max-w-sm mb-6 leading-relaxed">
             You haven't added any notes to your vault yet. Capture your
             thoughts, ideas, or reminders to get started.
           </p>
-
-          {/* Direct Action Link */}
           <Link
             to="/notes/new"
             className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 hover:bg-amber-600 dark:bg-amber-600 dark:hover:bg-amber-700 text-white font-medium text-sm rounded-xl transition-all shadow-sm"
