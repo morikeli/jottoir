@@ -10,61 +10,6 @@ export default function NoteVaultPage() {
     Temporal.ZonedDateTime.compare(b.lastModifiedAt, a.lastModifiedAt),
   );
 
-  // Placeholder notes data (you can replace this with your actual state or API data)
-  // const notes = [
-  //   {
-  //     id: "1",
-  //     title: "Project Roadmap",
-  //     preview: "Outline the key milestones for Q3 release...",
-  //     tag: "Work",
-  //     date: "2026-10-25",
-  //   },
-  //   {
-  //     id: "2",
-  //     title: "Grocery List",
-  //     preview: "Milk, eggs, coffee beans, sourdough bread...",
-  //     tag: "Personal",
-  //     date: "2026-10-26",
-  //   },
-  //   {
-  //     id: "3",
-  //     title: "Book Ideas",
-  //     preview: "Sci-fi thriller concept focusing on memory storage...",
-  //     tag: "Writing",
-  //     date: "2026-10-27",
-  //   },
-  //   {
-  //     id: "4",
-  //     title: "Website Redesign Concepts",
-  //     preview:
-  //       "Explore minimalist design systems, faster asset loading, and improved mobile navigation flows...",
-  //     tag: "Work",
-  //     date: "2026-10-28",
-  //     content:
-  //       "Explore minimalist design systems, faster asset loading, and improved mobile navigation flows. Make sure to audit accessibility contrast ratios before handing off designs to development.",
-  //   },
-  //   {
-  //     id: "5",
-  //     title: "Weekend Workout Routine",
-  //     preview:
-  //       "Saturday: 5km morning run, core strengthening. Sunday: Active recovery yoga and stretching...",
-  //     tag: "Personal",
-  //     date: "2026-10-28",
-  //     content:
-  //       "Saturday: 5km morning run followed by 15 minutes of core strengthening exercises.\nSunday: Active recovery yoga, foam rolling, and mobility stretching to prep for the upcoming week.",
-  //   },
-  //   {
-  //     id: "6",
-  //     title: "Article Draft: Future of AI",
-  //     preview:
-  //       "Discussing how collaborative AI agents are shifting the paradigm from search-based queries...",
-  //     tag: "Writing",
-  //     date: "2026-10-28",
-  //     content:
-  //       "Discussing how collaborative AI agents are shifting the paradigm from static search-based queries to autonomous, multi-step problem solving. Focus on developer workflows and user experience implications.",
-  //   },
-  // ];
-
   return (
     <div className="max-w-6xl mx-auto px-4 py-8 bg-gray-50 dark:bg-zinc-950 min-h-screen transition-colors">
       {/* Header */}
