@@ -9,21 +9,26 @@ export default function NoteVaultPage() {
 
   // sort notes in descending order safely resolving possible null/undefined/string types
   const myNotes = Object.values(notes).sort((a, b) => {
-    const dateA = a.lastModifiedAt 
-      ? (typeof a.lastModifiedAt === "string" ? Temporal.ZonedDateTime.from(a.lastModifiedAt) : a.lastModifiedAt)
+    const dateA = a.lastModifiedAt
+      ? typeof a.lastModifiedAt === "string"
+        ? Temporal.ZonedDateTime.from(a.lastModifiedAt)
+        : a.lastModifiedAt
       : Temporal.Now.zonedDateTimeISO();
 
-    const dateB = b.lastModifiedAt 
-      ? (typeof b.lastModifiedAt === "string" ? Temporal.ZonedDateTime.from(b.lastModifiedAt) : b.lastModifiedAt)
+    const dateB = b.lastModifiedAt
+      ? typeof b.lastModifiedAt === "string"
+        ? Temporal.ZonedDateTime.from(b.lastModifiedAt)
+        : b.lastModifiedAt
       : Temporal.Now.zonedDateTimeISO();
 
     return Temporal.ZonedDateTime.compare(dateB, dateA);
   });
 
   // Filter notes based on search query
-  const filteredNotes = myNotes.filter((note) =>
-    note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    note.content.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredNotes = myNotes.filter(
+    (note) =>
+      note.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      note.content.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   return (
@@ -84,7 +89,7 @@ export default function NoteVaultPage() {
           </Link>
         </div>
       )}
-      
+
       {/* Notes Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {filteredNotes.map((note) => {
@@ -105,17 +110,17 @@ export default function NoteVaultPage() {
                   {/* Tag badges with overflow protection */}
                   <div className="flex items-center gap-1.5 flex-wrap">
                     {visibleTags.map((tagName) => (
-                      <span 
-                        key={tagName} 
+                      <span
+                        key={tagName}
                         className="inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-400 rounded-md"
                       >
                         <FileText className="w-3 h-3" />
                         {tagName}
                       </span>
                     ))}
-                    
+
                     {overflowCount > 0 && (
-                      <span 
+                      <span
                         title={tagsList.slice(maxVisibleTags).join(", ")}
                         className="inline-flex items-center text-xs font-medium px-2 py-0.5 bg-gray-100 dark:bg-zinc-800 text-gray-500 dark:text-zinc-400 rounded-md cursor-help"
                       >
@@ -123,7 +128,7 @@ export default function NoteVaultPage() {
                       </span>
                     )}
                   </div>
-                  
+
                   <span className="flex items-center gap-1 text-xs text-gray-400 dark:text-zinc-500 shrink-0">
                     <Calendar className="w-3.5 h-3.5" />
                     {note.createdAt ? new Date().toLocaleDateString() : ""}
@@ -142,21 +147,9 @@ export default function NoteVaultPage() {
                   →
                 </span>
               </div>
-              <h2 className="text-lg font-semibold text-gray-900 dark:text-zinc-100 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2">
-                {note.title}
-              </h2>
-              <p className="text-gray-600 dark:text-zinc-400 text-sm line-clamp-2 leading-relaxed">
-                {note.content}
-              </p>
-            </div>
-            <div className="mt-4 pt-4 border-t border-gray-100 dark:border-zinc-800 flex items-center justify-between text-xs font-medium text-amber-600 dark:text-amber-400">
-              <span>Read more</span>
-              <span className="group-hover:translate-x-1 transition-transform">
-                →
-              </span>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
