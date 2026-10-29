@@ -39,6 +39,8 @@ export default function NoteVaultPage() {
         <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 dark:text-zinc-500" />
         <input
           type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search notes by title or content..."
           className="w-full pl-11 pr-4 py-3 bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400 shadow-sm text-gray-800 dark:text-zinc-100 placeholder-gray-400 dark:placeholder-zinc-500"
         />
