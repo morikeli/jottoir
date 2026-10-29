@@ -13,7 +13,7 @@ export default function FooterComponent() {
               className="flex items-center gap-2 text-amber-500 dark:text-amber-400 font-bold text-xl"
             >
               <PenTool className="w-5 h-5" />
-              <span>Jottly</span>
+              <span>Jottoir</span>
             </Link>
             <p className="text-xs text-gray-500 dark:text-zinc-400 mt-1">
               Your personal markdown-friendly vault for thoughts and notes.
@@ -61,7 +61,7 @@ export default function FooterComponent() {
 
         {/* Divider & Copyright */}
         <div className="mt-8 pt-6 border-t border-gray-100 dark:border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 dark:text-zinc-500 gap-2">
-          <p>© {new Date().getFullYear()} Jottly. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Jottoir. All rights reserved.</p>
           <p className="flex items-center gap-1">
             Built with{" "}
             <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 inline" />{" "}

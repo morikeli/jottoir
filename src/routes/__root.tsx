@@ -15,7 +15,7 @@ function Layout() {
   const { matches } = useRouterState();
   const activeMatch = matches[matches.length - 1];
   // Fallback title of the page; can be left blank - const { title }
-  const { title = "Jottly" } = activeMatch.context;
+  const { title = "Jottoir" } = activeMatch.context;
 
   // only change title when re-rendering router
   useEffect(() => {

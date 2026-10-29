@@ -16,7 +16,7 @@ export default function NavbarComponent() {
           className="flex items-center gap-2 text-white text-xl font-bold"
         >
           <PenTool className="w-6 h-6" />
-          <span>Jottly</span>
+          <span>Jottoir</span>
         </Link>
 
         <div className="ml-auto flex items-center gap-3">
