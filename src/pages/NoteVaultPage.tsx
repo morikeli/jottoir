@@ -45,7 +45,7 @@ export default function NoteVaultPage() {
       </div>
 
       {/* Empty notes Placeholder */}
-      {myNotes.length === 0 && (
+      {filteredNotes.length === 0 && myNotes.length === 0 && (
         <div className="flex flex-col items-center justify-center p-12 text-center bg-white dark:bg-zinc-900/50 border border-dashed border-gray-200 dark:border-zinc-800 rounded-2xl my-6">
           {/* Visual Icon Anchor */}
           <div className="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950/40 flex items-center justify-center text-amber-500 dark:text-amber-400 mb-4">
