@@ -38,7 +38,6 @@ export default function CreateOrUpdateNotePage() {
         navigate({to: `/notes/${newNoteId}`})
       }
     }
-    console.log({ title, tags: selectedTags, content });
     navigate({ to: "/" });
   };
 
