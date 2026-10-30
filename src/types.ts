@@ -1,4 +1,4 @@
-export interface Note {
+interface Note {
   id: string;
   title: string;
   content: string;
@@ -11,7 +11,7 @@ export interface Note {
   reminderDate?: Temporal.PlainDate | string | null;
 }
 
-export interface Tag {
+interface Tag {
   id: string;
   name: string;
 }
