@@ -33,7 +33,17 @@ const useNoteStore = create<NoteStore>()(
           },
         }));
       },
-,
+
+      createTag: (name) => {
+        const id = crypto.randomUUID();
+
+        set((state) => ({
+          tags: { ...state.tags, [id]: { id, name } },
+        }));
+
+        return id;
+      },
+
     }),
     { name: "Jottoir" },
   ),
