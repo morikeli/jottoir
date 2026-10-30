@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate, useParams } from "@tanstack/react-router";
-import { ArrowLeft, Save, FileText, Tag } from "lucide-react";
+import { ArrowLeft, Save, FileText, Tag as TagIcon } from "lucide-react";
 import useNoteStore from "../store/noteStore";
 
 export default function CreateOrUpdateNotePage() {
