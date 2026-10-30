@@ -86,7 +86,7 @@ export default function NavbarComponent() {
             }`}
           >
             <Link
-              to="/"
+              to="/vault"
               onClick={() => setIsOpen(false)}
               className="flex items-center gap-2 py-2 px-4 rounded-lg transition hover:bg-amber-600 dark:hover:bg-zinc-800 md:hover:bg-transparent md:inline-flex"
               activeProps={{

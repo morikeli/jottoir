@@ -23,7 +23,7 @@ export default function FooterComponent() {
           {/* Quick Navigation Links */}
           <div className="flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-zinc-400">
             <Link
-              to="/"
+              to="/vault"
               className="flex items-center gap-1.5 hover:text-amber-500 dark:hover:text-amber-400 transition-colors"
             >
               <Vault className="w-4 h-4" />
