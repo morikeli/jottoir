@@ -6,9 +6,9 @@ export interface Note {
   // Captures current UTC time
   createdAt: Temporal.Instant;
   // Captures current time in user's specific time zone
-  lastModifiedAt: Temporal.ZonedDateTime;
+  lastModifiedAt?: Temporal.ZonedDateTime | string | null;
   // Sets a specific calendar date (Year, Month, Day)
-  reminderDate: Temporal.PlainDate;
+  reminderDate?: Temporal.PlainDate | string | null;
 }
 
 export interface Tag {
