@@ -3,5 +3,5 @@ import NotesListPage from '../../pages/NotesListPage'
 
 export const Route = createFileRoute('/notes/')({
   component: NotesListPage,
-  context: () => ({title: "All Notes"})
+  context: () => ({title: "My Notes"})
 })

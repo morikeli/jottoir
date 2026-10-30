@@ -3,5 +3,5 @@ import TagsPage from '../pages/TagsPage'
 
 export const Route = createFileRoute('/tags')({
   component: TagsPage,
-  context: () => ({title: "Tags page"})
+  context: () => ({title: "Note Tags"})
 })
