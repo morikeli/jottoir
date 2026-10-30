@@ -1,6 +1,43 @@
-# Jottoir
+# ✒️ Jottoir
 
 ## Overview
+
+1. Landing page
+
+| Light mode | Dark mode |
+| -------|------|
+|<img width="1366" height="768" alt="Screenshot From 2026-10-30 15-03-03" src="https://github.com/user-attachments/assets/ccee73f4-4c8e-454a-952b-cb01eaea9ae5" /> | <img width="1366" height="768" alt="Screenshot From 2026-10-30 15-02-54" src="https://github.com/user-attachments/assets/2f373bfe-1e42-4571-9f48-0f17c4eea232" /> |
+
+2. Vault page
+
+| Light mode | Dark mode |
+| -------|------|
+| <img width="1366" height="768" alt="Screenshot From 2026-10-30 15-39-45" src="https://github.com/user-attachments/assets/26d6f92c-2c3c-419b-869a-91a183f66e2a" /> |<img width="1366" height="768" alt="Screenshot From 2026-10-30 15-39-38" src="https://github.com/user-attachments/assets/cf20e7b8-ced1-4f6d-9bb0-cb55015d9241" /> |
+
+3. Notes page
+
+| Light mode | Dark mode |
+| -------|------|
+| <img width="1366" height="768" alt="Screenshot From 2026-10-30 15-39-52" src="https://github.com/user-attachments/assets/529bf8c2-eeef-4f05-b95d-03ed0e449725" /> | <img width="1366" height="768" alt="Screenshot From 2026-10-30 15-40-00" src="https://github.com/user-attachments/assets/23852861-8582-44be-9a2f-f5789ea3dfa7" /> |
+
+4. Tags page
+
+| Light mode | Dark mode |
+| -------|------|
+| <img width="1366" height="768" alt="Screenshot From 2026-10-30 15-40-05" src="https://github.com/user-attachments/assets/1e608973-4bb1-433f-8526-684b926ed986" /> | <img width="1366" height="768" alt="Screenshot From 2026-10-30 15-40-12" src="https://github.com/user-attachments/assets/c29ddaef-1685-427d-93db-3cc3cba5d907" /> |
+
+5. Note Detail
+
+| Light mode | Dark mode |
+| -------|------|
+| <img width="1366" height="768" alt="Screenshot From 2026-10-30 15-46-34" src="https://github.com/user-attachments/assets/0c20e36c-96cb-4d77-9f5b-11371f57234a" /> | <img width="1366" height="768" alt="Screenshot From 2026-10-30 15-45-38" src="https://github.com/user-attachments/assets/6ca52c8c-9f54-46b9-bf06-0500c351cd20" /> |
+
+6. Create and edit note form
+
+| Light mode | Dark mode |
+| -------|------|
+| <img width="1366" height="768" alt="Screenshot From 2026-10-30 15-49-03" src="https://github.com/user-attachments/assets/53c8fcd7-58c8-46b8-8e71-bf420188cbd8" /> | <img width="1366" height="768" alt="Screenshot From 2026-10-30 15-49-26" src="https://github.com/user-attachments/assets/7723a342-fa7d-4b5b-a747-ede8a6e338d1" /> |
+
 
 Jottoir (pronounced **“jot-wahr”**) is a personal notes vault for capturing, organizing, and finding your thoughts, ideas, and reminders. The name is a portmanteau of **Jot** and **Memoir**.
 
