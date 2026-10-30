@@ -14,6 +14,11 @@ export default function NavbarComponent() {
         <Link
           to="/"
           className="flex items-center gap-2 text-white text-xl font-bold"
+          activeProps={{
+            className:
+              "text-amber-500 dark:text-amber-400 font-semibold bg-amber-600/30 md:bg-transparent",
+          }}
+          inactiveProps={{ className: "text-white" }}
         >
           <PenTool className="w-6 h-6" />
           <span>Jottoir</span>
