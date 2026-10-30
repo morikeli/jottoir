@@ -95,4 +95,4 @@ If you find a bug or have a feature request, [open an issue](../../issues/new). 
 If Jottoir is useful to you, [star the repository](../../stargazers) to show your support.
 
 ## Acknowledgements
-- Favicon icon designed by [graphicmall]("https://www.flaticon.com/free-icons/writing-nib") from [Flaticon].
+- Favicon icon designed by [graphicmall](https://www.flaticon.com/free-icons/writing-nib) from [Flaticon].
