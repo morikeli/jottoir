@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import NoteVaultPage from "../pages/NoteVaultPage";
+import LandingPage from "../pages/LandingPage";
 
 export const Route = createFileRoute("/")({
-  component: NoteVaultPage,
-  context: () => ({ title: "My vault" }),
-});
+  component: LandingPage,
+  context: () => ({title: "Jottoir"})
+})
