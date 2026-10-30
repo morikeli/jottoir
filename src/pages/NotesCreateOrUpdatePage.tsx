@@ -4,21 +4,41 @@ import { ArrowLeft, Save, FileText, Tag } from "lucide-react";
 import useNoteStore from "../store/noteStore";
 
 export default function CreateOrUpdateNotePage() {
-  const { notes, tags } = useNoteStore();
-  const myTags = Object.values(tags);
-
+  const { notes, tags, addNote, updateNote } = useNoteStore();
   const navigate = useNavigate();
-  // State for the form (can be pre-filled if editing an existing note)
-  const [title, setTitle] = useState("");
-  const [tag, setTag] = useState("Work");
-  const [content, setContent] = useState("");
   const params = useParams({ strict: false });
   const isEditing = Boolean(params.noteId);
+  const noteId = params.noteId
+  const note = noteId ? notes[noteId] : null;
+  const [title, setTitle] = useState(note?.title || "");
+  const [selectedTags, setSelectedTags] = useState<string[]>(note?.tags || []);
+  const [content, setContent] = useState(note?.content || "");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Add save/update logic here
-    console.log({ title, tag, content });
+  const dynamicTags = Object.values(tags);
+
+  // Toggle tag selection handler
+  const toggleTag = (tagName: string) => {
+    setSelectedTags(
+      (prev) =>
+        prev.includes(tagName)
+          ? prev.filter((t) => t !== tagName) // Remove if already selected
+          : [...prev, tagName], // Add if not selected
+    );
+  };
+
+  const handleSubmit = (e: React.SubmitEvent) => {
+    e.preventDefault(); // don't refresh page after submitting form
+
+    if (title.trim() && content.trim()) {
+      if (note) {
+        updateNote(noteId, { title, content, tags: selectedTags });
+        navigate({to: `/notes/${noteId}`})
+      } else {
+        const newNoteId = addNote(title, content, selectedTags);
+        navigate({to: `/notes/${newNoteId}`})
+      }
+    }
+    console.log({ title, tags: selectedTags, content });
     navigate({ to: "/" });
   };
 
