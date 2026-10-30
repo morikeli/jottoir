@@ -21,10 +21,22 @@ const useNoteStore = create<NoteStore>()(
         return id;
       },
 
-    
+      updateNote: (noteId, updates) => {
+        set((state) => ({
+          notes: {
+            ...state.notes,
+            [noteId]: {
+              ...state.notes[noteId],
+              ...updates,
+              lastModifiedAt: Temporal.Now.zonedDateTimeISO(),
+            },
+          },
+        }));
+      },
+,
     }),
-    {name: "Jottoir"}
-  )
+    { name: "Jottoir" },
+  ),
 );
 
-export default useNoteStore
+export default useNoteStore;
