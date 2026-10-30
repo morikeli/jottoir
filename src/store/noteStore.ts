@@ -34,6 +34,14 @@ const useNoteStore = create<NoteStore>()(
         }));
       },
 
+      deleteNote: (id) => {
+        set((state) => {
+          const updatedNotes = { ...state.notes };
+          delete updatedNotes[id];
+          return { notes: updatedNotes };
+        });
+      },
+
       createTag: (name) => {
         const id = crypto.randomUUID();
 
