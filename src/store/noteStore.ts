@@ -6,7 +6,22 @@ const useNoteStore = create<NoteStore>()(
   persist(
     (set) => ({
       notes: {},
-      tags: {}
+      tags: {},
+      addNote: (title, content, tags) => {
+        const id = crypto.randomUUID();
+        const createdAt = Temporal.Now.instant();
+
+        set((state) => ({
+          notes: {
+            ...state.notes,
+            [id]: { id, title, content, tags, createdAt },
+          },
+        }));
+
+        return id;
+      },
+
+    
     }),
     {name: "Jottoir"}
   )
