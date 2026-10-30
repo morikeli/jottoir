@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { PenTool, Heart, Vault, NotebookPen, Tag, GitFork } from "lucide-react";
+import { PenTool, Heart, Vault, NotebookPen, Tag } from "lucide-react";
 
 export default function FooterComponent() {
   return (
@@ -43,19 +43,6 @@ export default function FooterComponent() {
               <Tag className="w-4 h-4" />
               <span>Tags</span>
             </Link>
-          </div>
-
-          {/* Social / External Link */}
-          <div className="flex items-center gap-4">
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub Repository"
-              className="p-2 rounded-lg text-gray-400 hover:text-gray-700 dark:hover:text-zinc-200 hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors"
-            >
-              <GitFork className="w-5 h-5" />
-            </a>
           </div>
         </div>
 
