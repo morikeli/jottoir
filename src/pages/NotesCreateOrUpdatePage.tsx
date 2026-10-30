@@ -87,29 +87,36 @@ export default function CreateOrUpdateNotePage() {
             </div>
           </div>
 
-          {/* Tag Selector */}
+          {/* Dynamic Multi-Select Tag Buttons */}
           <div>
-            <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-              Category Tag
+            <label className="block text-sm font-semibold text-gray-700 dark:text-zinc-300 mb-2">
+              Category Tags
             </label>
-            <div className="relative">
-              <Tag className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
-              <select
-                value={tag}
-                onChange={(e) => setTag(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 dark:bg-zinc-900 dark:border-zinc-800 dark:text-zinc-100 dark:focus:bg-zinc-800 dark:placeholder-zinc-500 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400 focus:bg-white transition-all text-gray-900 appearance-none"
-              >
-                {myTags.length > 0 ? (
-                  myTags.map((t) => (
-                    <option key={t.id} value={t.name}>
-                      {t.name}
-                    </option>
-                  ))
-                ) : (
-                  // Fallback if no tags exist
-                  <option value="General">General</option>
-                )}
-              </select>
+            <div className="flex flex-wrap gap-2">
+              {dynamicTags.length > 0 ? (
+                dynamicTags.map((t) => {
+                  const isSelected = selectedTags.includes(t.name);
+                  return (
+                    <button
+                      type="button"
+                      key={t.id}
+                      onClick={() => toggleTag(t.name)}
+                      className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all ${
+                        isSelected
+                          ? "bg-amber-500 text-white shadow-sm ring-2 ring-amber-400/50"
+                          : "bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-zinc-300 hover:bg-gray-200 dark:hover:bg-zinc-700 border border-gray-200/60 dark:border-zinc-700/60"
+                      }`}
+                    >
+                      <TagIcon className="w-3.5 h-3.5" />
+                      <span>{t.name}</span>
+                    </button>
+                  );
+                })
+              ) : (
+                <p className="text-xs text-gray-400 dark:text-zinc-500 italic">
+                  No tags created yet. Add some in the Tags tab!
+                </p>
+              )}
             </div>
           </div>
 
