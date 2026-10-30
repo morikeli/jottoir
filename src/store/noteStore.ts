@@ -44,6 +44,13 @@ const useNoteStore = create<NoteStore>()(
         return id;
       },
 
+      deleteTag: (id) => {
+        set((state) => {
+          const updatedTags = { ...state.tags };
+          delete updatedTags[id];
+          return { tags: updatedTags };
+        });
+      },
     }),
     { name: "Jottoir" },
   ),
