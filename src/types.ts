@@ -21,6 +21,7 @@ export interface NoteStore {
   tags: Record<string, Tag>;
   addNote: (title: string, content: string, tags: string[]) => string;
   updateNote: (noteId: string, updates: Partial<Omit<Note, "id">>) => void;
+  deleteNote: (id: string) => void
   createTag: (name: string) => string;
   deleteTag: (id: string) => void
 }
